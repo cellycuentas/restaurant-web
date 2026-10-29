@@ -1,0 +1,17 @@
+CREATE DATABASE IF NOT EXISTS aluci_db
+    CHARACTER SET utf8mb4
+    COLLATE utf8mb4_unicode_ci;
+
+USE aluci_db;
+
+CREATE TABLE IF NOT EXISTS pedidos (
+    id INT UNSIGNED AUTO_INCREMENT PRIMARY KEY,
+    nombre VARCHAR(100) NOT NULL,
+    telefono VARCHAR(20) NOT NULL,
+    plato VARCHAR(100) NOT NULL,
+    cantidad INT UNSIGNED NOT NULL,
+    precio_unitario DECIMAL(10,2) NOT NULL,
+    total DECIMAL(10,2) NOT NULL,
+    detalle VARCHAR(500) NULL,
+    fecha_pedido TIMESTAMP DEFAULT CURRENT_TIMESTAMP
+);
